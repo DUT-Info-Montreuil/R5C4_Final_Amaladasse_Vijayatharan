@@ -21,6 +21,7 @@ export class ListeComponent implements OnInit {
 
     this.http.get<any[]>('http://127.0.0.1:5000/searches/all').subscribe((response) => {
       this.data = response;
+      console.log(this.data);
       this.updatePagination(); 
     });
   }

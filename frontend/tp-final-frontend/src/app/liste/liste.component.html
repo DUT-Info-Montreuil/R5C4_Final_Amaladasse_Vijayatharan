@@ -1,16 +1,21 @@
 <div class="list-container">
     <h1>Liste Paginée</h1>
   
-    <!-- Liste des données -->
+
     <ul>
-      <li *ngFor="let item of paginatedData">
-        <strong>ID:</strong> {{ item.id }} | 
-        <strong>Algorithm:</strong> {{ item.algorithm }} |
-        <strong>Grid:</strong> {{ item.grid_width }} x {{ item.grid_height }}
-      </li>
-    </ul>
-  
-    <!-- Boutons de pagination -->
+        <li *ngFor="let item of paginatedData">
+          <strong>ID:</strong> {{ item.id }} <br />
+          <strong>Algorithm:</strong> {{ item.algorithm }} <br />
+          <strong>Grid:</strong> {{ item.grid_width }} x {{ item.grid_height }} <br />
+          <strong>Start:</strong> [{{ item.start[0] }}, {{ item.start[1] }}] <br />
+          <strong>End:</strong> [{{ item.end[0] }}, {{ item.end[1] }}] <br />
+          <strong>Move Type:</strong> {{ item.move_type }} <br />
+          <strong>Path Length:</strong> {{ item.path_length }} <br />
+          <strong>Visited Nodes:</strong> {{ item.visited_nodes }} <br />
+          <strong>Time (ns):</strong> {{ item.time_ns }} <br />
+        </li>
+      </ul>
+
     <div class="pagination-controls">
       <button (click)="prevPage()" [disabled]="currentPage === 1">Page Précédente</button>
       <span>Page {{ currentPage }}</span>
