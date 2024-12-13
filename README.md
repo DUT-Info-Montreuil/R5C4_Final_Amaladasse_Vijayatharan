@@ -26,7 +26,7 @@
      ```bash
      ng serve
      ```
-   - Une fois le serveur démarré, accédez à l'application via l'URL fournie (en général, [http://localhost:4200](http://localhost:4200)).
+   - Une fois le serveur démarré, accédez à l'application via l'URL fournie ([http://localhost:4200](http://localhost:4200)).
 
 ### Backend
 1. **Navigation vers le dossier backend** :
@@ -40,4 +40,3 @@
      ```bash
      flask run
      ```
-   - Le serveur backend sera alors accessible à l'URL affichée dans le terminal (en général, [http://localhost:5000](http://localhost:5000)).
