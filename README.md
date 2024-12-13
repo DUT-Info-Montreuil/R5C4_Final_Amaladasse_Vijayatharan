@@ -6,7 +6,7 @@
 1. **Téléchargement ou clonage du projet** :
    - Téléchargez le fichier .zip contenant le projet ou clonez le dépôt à l'aide de la commande suivante :
      ```bash
-     git clone <URL_du_dépôt>
+     git clone https://github.com/DUT-Info-Montreuil/R5C4_Final_Amaladasse_Vijayatharan.git
      ```
 
 2. **Navigation vers le dossier frontend** :
