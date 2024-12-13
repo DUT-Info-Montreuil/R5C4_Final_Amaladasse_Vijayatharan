@@ -1,17 +1,14 @@
-from flask import Flask, jsonify, request
+
+from flask import Blueprint, jsonify
 import json
 from flask_cors import CORS
 import os
 
-
-app = Flask(__name__)
-
-CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
-
+routes_bp = Blueprint('routes', __name__)
 
 DATA_PATH = 'data/searches.json'
 
-@app.route('/', methods=['GET'])
+@routes_bp.route('/', methods=['GET'])
 def home():
     return jsonify({"message": "Hello"})
 
@@ -21,7 +18,7 @@ def load_data():
     with open(DATA_PATH, 'r') as f:
         return json.load(f)
 
-@app.route('/searches', methods=['GET'])
+@routes_bp.route('/searches', methods=['GET'])
 def get_searches():
     data = load_data()   
     return jsonify({ 
@@ -29,21 +26,20 @@ def get_searches():
     })
 
 
-@app.route('/searches/all', methods=['GET'])
+@routes_bp.route('/searches/all', methods=['GET'])
 def get_all():
     data = load_data()
     return jsonify(data)
 
 
-@app.route('/searches', methods=['POST'])
+@routes_bp.route('/searches', methods=['POST'])
 def create():
     return jsonify({'error': 'Method not implemented'}), 501
 
-@app.route('/searches/<int:id>', methods=['PUT'])
+@routes_bp.route('/searches/<int:id>', methods=['PUT'])
 def update(id):
     return jsonify({'error': 'Method not implemented'}), 501
 
-@app.route('/searches/<int:id>', methods=['DELETE'])
+@routes_bp.route('/searches/<int:id>', methods=['DELETE'])
 def delete(id):
     return jsonify({'error': 'Method not implemented'}), 501
-
